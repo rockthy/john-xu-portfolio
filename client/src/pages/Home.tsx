@@ -98,7 +98,8 @@ const resumeData = {
   
   projects: [
     { name: "Arctic Sea Ice Analysis", description: "Led research using satellite data and R to project 15-year recession trajectories; awarded 'Best Project Overall'" },
-    { name: "Turbulent Flow Modeling", description: "Conducted computational research on stochastic processing and advanced numerical analysis" }
+    { name: "Turbulent Flow Modeling", description: "Conducted computational research on stochastic processing and advanced numerical analysis" },
+    { name: "PMI Air Quality Sensor #82799", description: "Developed and deployed an air quality monitoring sensor for Cordova Bay, operating 24/7 year-round. Contributing to the open-source Sensor.Community project.", link: "https://sensor.community/en/" }
   ]
 };
 
@@ -365,6 +366,17 @@ export default function Home() {
             >
               <h3 className="font-serif text-lg font-bold mb-2">{project.name}</h3>
               <p className="text-sm text-muted-foreground leading-relaxed">{project.description}</p>
+              {project.link && (
+                <a 
+                  href={project.link}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-1 mt-3 text-sm text-primary hover:text-primary/80 transition-colors"
+                >
+                  <ExternalLink className="w-3 h-3" />
+                  View Project
+                </a>
+              )}
             </motion.div>
           ))}
         </motion.div>
