@@ -38,10 +38,10 @@ const resumeData = {
   summary: "Strategic Senior Data Engineer & Architect with 7+ years of experience building high-performance, scalable data platforms and AI-ready infrastructure. Expert in Modern Data Stack, Distributed Computing (Spark), and Cloud Architecture (Azure/AWS). Proven track record in reducing operational costs by 30% and improving data reliability through automated observability and CI/CD.",
   
   skills: {
-    "Languages & Databases": ["Python", "SQL", "Scala", "R", "PostgreSQL", "Snowflake", "Azure SQL", "Pinecone", "Milvus"],
-    "Data Engineering": ["Apache Spark", "Databricks", "Delta Lake", "Apache Iceberg", "dbt", "Apache Airflow", "Dagster", "Azure Data Factory"],
+    "Languages & Databases": ["Python", "SQL", "Scala", "R", "PostgreSQL", "Snowflake", "Azure SQL"],
+    "Data Engineering": ["Apache Spark", "Databricks", "Delta Lake", "Apache Iceberg", "dbt", "Apache Airflow", "Azure Data Factory"],
     "Cloud & Infrastructure": ["Azure Synapse", "ADLS", "Event Hubs", "AWS S3", "Redshift", "Lambda", "Terraform", "Docker", "Kubernetes", "GitHub Actions"],
-    "Observability & Governance": ["Great Expectations", "Monte Carlo", "Collibra", "LeanIX", "TOGAF 9"],
+    "Observability & Governance": ["Monte Carlo", "Collibra", "LeanIX", "TOGAF 9"],
     "AI & Analytics": ["MLflow", "LangChain", "RAG Pipelines", "Power BI", "Plotly", "Scikit-learn"]
   },
   
