@@ -36,7 +36,14 @@ jobs:
         run: pnpm install --no-frozen-lockfile
 
       - name: Build Frontend
-        run: pnpm --filter client build
+        run: |
+          cd client
+          pnpm run build
+        # This forces the action to go into the client folder directly
+
+      - name: List files (Debug)
+        run: ls -R client/dist
+        # This will show us exactly what was built in the logs if it fails
 
       - name: Setup Pages
         uses: actions/configure-pages@v4
@@ -44,7 +51,7 @@ jobs:
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          # This points to the folder Vite generates inside /client
+          # This must match where your index.html is after the build
           path: './client/dist'
 
   deploy:
