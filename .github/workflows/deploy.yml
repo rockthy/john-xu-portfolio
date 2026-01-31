@@ -52,8 +52,8 @@ jobs:
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          # If vite.config.ts is in the root, it usually builds to a root 'dist' folder
-          path: './dist'
+          # This points directly to the folder containing your index.html
+          path: './dist/public'
 
   deploy:
     environment:
