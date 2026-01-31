@@ -33,17 +33,18 @@ jobs:
           cache: 'pnpm'
 
       - name: Install dependencies
-        run: pnpm install --no-frozen-lockfile
-
-      - name: Build Frontend
         run: |
-          cd client
-          pnpm run build
-        # This forces the action to go into the client folder directly
+          # This allows Vite's dependencies to run their setup scripts
+          pnpm config set only-allow-trusted-dependencies false 
+          pnpm install --no-frozen-lockfile
 
-      - name: List files (Debug)
-        run: ls -R client/dist
-        # This will show us exactly what was built in the logs if it fails
+      - name: Build Site
+        # Running from the root because your vite.config.ts is in the root
+        run: pnpm run build 
+
+      - name: Locate Build Folder (Debug)
+        # This will search for your index.html so we know exactly where it went
+        run: find . -name "index.html"
 
       - name: Setup Pages
         uses: actions/configure-pages@v4
@@ -51,8 +52,8 @@ jobs:
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          # This must match where your index.html is after the build
-          path: './client/dist'
+          # If vite.config.ts is in the root, it usually builds to a root 'dist' folder
+          path: './dist'
 
   deploy:
     environment:
