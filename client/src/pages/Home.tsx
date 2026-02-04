@@ -34,7 +34,7 @@ const resumeData = {
   title: "Senior Data Engineer & Architect",
   email: "johnx93@gmail.com",
   linkedin: "linkedin.com/in/xu-",
-  location: "Philadelphia, PA",
+  location: "Vancouver, BC",
   summary: "Strategic Senior Data Engineer & Architect with 7+ years of experience building high-performance, scalable data platforms and AI-ready infrastructure. Expert in Modern Data Stack, Distributed Computing (Spark), and Cloud Architecture (Azure/AWS). Proven track record in reducing operational costs by 30% and improving data reliability through automated observability and CI/CD.",
   
   skills: {
