@@ -35,13 +35,13 @@ const resumeData = {
   email: "johnx93@gmail.com",
   linkedin: "linkedin.com/in/xu-",
   location: "Vancouver, BC",
-  summary: "Strategic Senior Data Engineer & Architect with 7+ years of experience building high-performance, scalable data platforms and AI-ready infrastructure. Expert in Modern Data Stack, Distributed Computing (Spark), and Cloud Architecture (Azure/AWS). Proven track record in reducing operational costs by 30% and improving data reliability through automated observability and CI/CD.",
+  summary: "Senior Data Engineer & Architect with 8+ years of experience designing and operating scalable, AI-ready data platforms. Skilled in Lakehouse architectures (Databricks/Delta Lake), Azure and AWS cloud stacks, CI/CD, Spark optimization, and orchestration tools (Informatica, Airflow, Dagster). Consistently reduces costs and improves data reliability through automation, observability, and partitioning strategies.",
   
   skills: {
-    "Languages & Databases": ["Python", "SQL", "Scala", "R", "PostgreSQL", "Snowflake", "Azure SQL"],
-    "Data Engineering": ["Apache Spark", "Databricks", "Delta Lake", "Apache Iceberg", "dbt", "Apache Airflow", "Azure Data Factory"],
-    "Cloud & Infrastructure": ["Azure Synapse", "ADLS", "Event Hubs", "AWS S3", "Redshift", "Lambda", "Terraform", "Docker", "Kubernetes", "GitHub Actions"],
-    "Observability & Governance": ["Monte Carlo", "Collibra", "LeanIX", "TOGAF 9"],
+    "Languages & Databases": ["Python", "SQL", "Scala", "R", "PostgreSQL", "Snowflake", "Azure SQL", "Vector DBs"],
+    "Data Engineering": ["Apache Spark", "Databricks", "Delta Lake", "Apache Iceberg", "dbt", "Apache Airflow", "Dagster", "Informatica", "Azure Data Factory"],
+    "Cloud & Infrastructure": ["Azure Fabric", "ADLS", "Azure SQL", "Azure DevOps", "AWS", "Terraform", "Docker", "Kubernetes", "GitHub Actions"],
+    "Observability & Governance": ["Great Expectations", "Monte Carlo", "Collibra", "LeanIX", "TOGAF 9"],
     "AI & Analytics": ["MLflow", "LangChain", "RAG Pipelines", "Power BI", "Plotly", "Scikit-learn"]
   },
   
@@ -52,9 +52,10 @@ const resumeData = {
       period: "Nov 2022 – Present",
       highlights: [
         "Architected and deployed a multi-petabyte Lakehouse architecture using Databricks and Delta Lake, improving query performance by 50%",
-        "Engineered CI/CD pipelines using Azure DevOps and Terraform, automating deployment of 100+ data assets",
-        "Optimized Spark jobs resulting in $15k/month reduction in Azure Synapse compute costs",
-        "Integrated MLflow into production pipelines, ensuring 99.9% model serving reliability"
+        "Built Azure Stack cloud architecture (Fabric, Data Lake, Azure SQL) with Azure DevOps CI/CD and SSDT, automating 100+ data assets and cutting time-to-production by 40%",
+        "Orchestrated data pipelines with Informatica PowerCenter/IDMC to support high-visibility sales reports and automated business processes",
+        "Optimized Spark jobs and partition strategies, reducing Azure Synapse compute costs by $15k/month",
+        "Led governance initiatives with LeanIX to align data architecture with enterprise transformation goals"
       ]
     },
     {
@@ -62,10 +63,11 @@ const resumeData = {
       company: "Provincial Health Services Authority (PHSA)",
       period: "Feb 2021 – Oct 2022",
       highlights: [
-        "Scaled telemetry data ingestion to handle 5TB+ daily volume for Zoom Virtual Health platform",
-        "Modernized legacy ETL processes, reducing data latency from 24 hours to near real-time",
-        "Developed automated data quality frameworks, reducing manual reconciliation by 70%",
-        "Delivered executive dashboards providing insights into 1M+ virtual health visits"
+        "Scaled telemetry data ingestion to handle 5TB+ daily volume for the Zoom Virtual Health platform",
+        "Modernized legacy ETL by migrating SQL Server workloads to Azure Data Factory, reducing latency from 24 hours to near real-time",
+        "Developed automated data quality frameworks in Python, reducing manual reconciliation by 70%",
+        "Delivered executive Power BI dashboards with real-time insights into 1M+ virtual health visits",
+        "Built analytics for virtual health applications including Stroke Services BC dashboards for TIA sites"
       ]
     },
     {
@@ -74,8 +76,9 @@ const resumeData = {
       period: "Dec 2018 – Jan 2021",
       highlights: [
         "Spearheaded cloud migration of medical imaging archives to AWS using Docker and Kubernetes",
-        "Designed the Controlled Data Disclosure Environment (CDDE) ensuring 100% PII compliance",
-        "Automated capacity forecasting models improving resource allocation accuracy by 25%"
+        "Created the Controlled Data Disclosure Environment (CDDE) for de-identified clinical data research with 100% PII compliance",
+        "Automated capacity forecasting models using R and PostgreSQL, improving resource allocation accuracy by 25%",
+        "Partnered with clinical research teams to transform EHR data into analyzable formats and support pandemic response initiatives"
       ]
     },
     {
@@ -84,14 +87,28 @@ const resumeData = {
       period: "Jan 2018 – Dec 2018",
       highlights: [
         "Developed NLP pipelines for Mandarin text processing using Jieba and NLTK",
-        "Implemented ensemble classifiers achieving 15% improvement in model precision"
+        "Implemented ensemble classifiers (XGBoost, AdaBoost) achieving 15% improvement in model precision",
+        "Built ontology management workflows with SPARQL, Jena, and Protégé for knowledge engineering",
+        "Developed SVR and classification algorithms with scikit-learn cross-validation for diabetic risk prediction"
       ]
     }
   ],
   
   education: [
-    { degree: "Bachelor of Science, Mathematics and Statistics", school: "University of Victoria" },
-    { degree: "Bachelor of Engineering, Software Engineering", school: "McGill University" }
+    {
+      degree: "Bachelor of Science, Mathematics and Statistics",
+      school: "University of Victoria",
+      period: "Jan 2014 – Dec 2017",
+      location: "Victoria, BC",
+      coursework: "Applied Linear Regression, Time Series Analysis, Multivariate Analysis, Mathematical Modeling, Real Analysis, Database Management Systems"
+    },
+    {
+      degree: "Bachelor of Engineering, Software Engineering",
+      school: "McGill University",
+      period: "Sep 2011 – May 2013",
+      location: "Montreal, QC",
+      coursework: "Data Structures and Algorithms, Database Management Systems, Software Design, Object-Oriented Design, Programming with Java"
+    }
   ],
   
   certifications: ["TOGAF 9 Certified", "Certified SAFe® 6 Architect"],
@@ -195,7 +212,7 @@ export default function Home() {
               variants={staggerItem}
             >
               Building high-performance data platforms and AI-ready infrastructure. 
-              7+ years bridging complex data engineering with business-critical solutions.
+              8+ years bridging complex data engineering with business-critical solutions.
             </motion.p>
             <motion.div 
               className="flex flex-wrap items-center gap-4 text-sm text-muted-foreground"
@@ -324,9 +341,19 @@ export default function Home() {
           viewport={{ once: true }}
         >
           {resumeData.education.map((edu, index) => (
-            <motion.div key={index} variants={staggerItem}>
+            <motion.div key={index} variants={staggerItem} className="space-y-1">
               <h3 className="font-serif text-xl font-bold">{edu.degree}</h3>
               <p className="text-muted-foreground">{edu.school}</p>
+              {(edu.period || edu.location) && (
+                <p className="text-sm text-muted-foreground">
+                  {[edu.period, edu.location].filter(Boolean).join(" · ")}
+                </p>
+              )}
+              {edu.coursework && (
+                <p className="text-sm text-muted-foreground/90">
+                  <span className="font-medium">Coursework:</span> {edu.coursework}
+                </p>
+              )}
             </motion.div>
           ))}
         </motion.div>
