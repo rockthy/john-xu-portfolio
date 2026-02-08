@@ -59,7 +59,7 @@ const resumeData = {
       ]
     },
     {
-      title: "Business Intelligence Lead",
+      title: "BI Analytics Lead, Virtual Health",
       company: "Provincial Health Services Authority (PHSA)",
       period: "Feb 2021 – Oct 2022",
       highlights: [
